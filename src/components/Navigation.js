@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import MobileMenu from './MobileMenu';
 import { Link } from "react-router-dom";
 import Styled from "styled-components";
 
@@ -10,16 +11,32 @@ justify-content: flex-end;
 align-items: center;
 font-size: 1.5rem;
 background-color: lightgrey;
+
+@media(max-width: 800px) {
+    
+}
 `
 
 const Image = Styled.img`
 height: 2rem;
 justify-content: flex-start;
-margin-right: 45%;
+margin-right: auto;
 `
 
 const NavLink = Styled.div`
 padding: 2% 3%;
+
+@media(max-width: 800px) {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transform: translate3d(-100vw, 0, 0);
+    transition: transform .3s cubic-bezier(0, .52, 0, 1);
+
+    width: 100vw;
+    height: 100vh;
+}
 `
 
 const StyledLink = Styled(Link)`
@@ -30,7 +47,6 @@ color: darkblue;
     color: white;
 }
 `
-
 
 const Navigation = () => {
     return (
@@ -49,6 +65,7 @@ const Navigation = () => {
                 <NavLink>
                     <StyledLink to="/contact">Contact</StyledLink>
                 </NavLink>
+                <MobileMenu />
             </NavContainer>
         </div>
     )
