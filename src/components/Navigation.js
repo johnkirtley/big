@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import MobileMenu from './MobileMenu';
 import { Link } from "react-router-dom";
 import Styled from "styled-components";
@@ -28,6 +28,14 @@ padding: 2% 3%;
 
 @media(max-width: 800px) {
     display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transform: translate3d(-100vw, 0, 0);
+    transition: transform .3s cubic-bezier(0, .52, 0, 1);
+
+    width: 100vw;
+    height: 100vh;
 }
 `
 
@@ -39,7 +47,6 @@ color: darkblue;
     color: white;
 }
 `
-
 
 const Navigation = () => {
     return (

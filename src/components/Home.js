@@ -15,15 +15,37 @@ align-items: center;
 
 const Title = Styled.h1`
 margin: 0;
+`
 
+const TitleContainer = Styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
 `
 
 
 const Home = () => {
     return (
-        <StyledHeader>
-            <Title>BIG Investment Group</Title>
-        </StyledHeader>
+        <>
+            <StyledHeader>
+                <Title>BIG Investment Group</Title>
+            </StyledHeader>
+            <div>
+                <TitleContainer>
+                    <h2>Why Us</h2>
+                </TitleContainer>
+            </div>
+            <div>
+                <TitleContainer>
+                    <h2>Our Strategy</h2>
+                </TitleContainer>
+            </div>
+            <div>
+                <TitleContainer>
+                    <h2>Work With Us</h2>
+                </TitleContainer>
+            </div>
+        </>
     )
 }
 

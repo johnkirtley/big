@@ -10,16 +10,23 @@ display: none;
     padding: 3%;
 }
 `
-const test = () => {
-    console.log('working')
-}
+
+
+const MobileItems = Styled.div`
+display: none;
+`
 
 
 const MobileMenu = () => {
     return (
-        <StyledMenu onClick={test}>
+        <StyledMenu>
             <i class="fas fa-bars"></i>
-        </StyledMenu >
+            <MobileItems>
+                <p>Test</p>
+                <p>Test</p>
+                <p>Test</p>
+            </MobileItems>
+        </StyledMenu>
     )
 }
 
