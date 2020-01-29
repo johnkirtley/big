@@ -1,5 +1,6 @@
 import React from 'react'
 import Styled from "styled-components";
+import { Link } from 'react-router-dom';
 
 
 
@@ -9,6 +10,7 @@ background-size: cover;
 background-repeat: no repeat;
 height: 60vh;
 display: flex;
+flex-flow: column;
 justify-content: center;
 align-items: center;
 `
@@ -23,12 +25,35 @@ justify-content: center;
 align-items: center;
 `
 
+const CallToAction = Styled.button`
+font-size: 1.25rem;
+border-radius: 10px;
+padding: 7% 10%;
+border: none;
+margin-top: 5%;
+width: 12rem;
+
+&:hover {
+    background-color: red;
+}
+`
+
+const StyledLink = Styled(Link)`
+font-size: 1.25rem;
+border-radius: 10px;
+border: none;
+margin-top: 5%;
+`
+
 
 const Home = () => {
     return (
         <>
             <StyledHeader>
-                <Title>BIG Investment Group</Title>
+                <Title>HEADLINE</Title>
+                <StyledLink to="/about">
+                    <CallToAction>Call To Action</CallToAction>
+                </StyledLink>
             </StyledHeader>
             <div>
                 <TitleContainer>
