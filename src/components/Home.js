@@ -57,13 +57,13 @@ display: flex;
 
 const Home = () => {
 
-    const counter = useEffect(() => {
+    useEffect(() => {
         let current = 0;
         let increment = 1;
         const num = document.querySelector('.counter');
         const timer = setInterval(function () {
             current += increment;
-            num.innerHTML = current;
+            num.textContent = current;
             if (current === 25) {
                 clearInterval(timer);
             }
@@ -83,7 +83,7 @@ const Home = () => {
                 <TitleContainer>
                     <h2>Why Us</h2>
                     <CountContainer>
-                        <Counter onClick={counter} className="counter"></Counter>
+                        <Counter className="counter"></Counter>
                         <p>Years of experience</p>
                     </CountContainer>
                 </TitleContainer>
