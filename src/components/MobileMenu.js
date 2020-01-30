@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { Link } from 'react-router-dom';
 import Styled from 'styled-components';
 
 
@@ -11,21 +12,36 @@ display: none;
 }
 `
 
-
-const MobileItems = Styled.div`
-display: none;
+const StyledLinks = Styled(Link)`
+display: block;
+text-decoration: none;
+padding: 8% 0;
 `
 
 
+
 const MobileMenu = () => {
+
+    useEffect(() => {
+        const menu = document.querySelector('.mobile-menu');
+        const hamburger = document.querySelector('.hamburger-menu');
+        hamburger.addEventListener('click', () => {
+            menu.classList.toggle('mobile-menu');
+        })
+    })
+
+
+
+
     return (
-        <StyledMenu>
+        <StyledMenu className='hamburger-menu'>
             <i class="fas fa-bars"></i>
-            <MobileItems>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-            </MobileItems>
+            <div className='mobile-menu' >
+                <StyledLinks to="/">Home</StyledLinks>
+                <StyledLinks to='/about'>About</StyledLinks>
+                <StyledLinks to='/team'>Team</StyledLinks>
+                <StyledLinks to='/contact'>Contact</StyledLinks>
+            </div>
         </StyledMenu>
     )
 }
