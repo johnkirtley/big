@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import MobileMenu from './MobileMenu';
+import Logo from "./logo.png";
 import { Link } from "react-router-dom";
 import Styled from "styled-components";
 
@@ -18,7 +19,7 @@ background-color: lightgrey;
 `
 
 const Image = Styled.img`
-height: 2rem;
+height: 7rem;
 justify-content: flex-start;
 margin-right: auto;
 `
@@ -52,7 +53,7 @@ const Navigation = () => {
     return (
         <div>
             <NavContainer>
-                <Image src="http://www.pngpix.com/wp-content/uploads/2016/07/PNGPIX-COM-BlackRock-Logo-PNG-Transparent.png" alt="blackrock logo" />
+                <Image src={Logo} alt="blackrock logo" />
                 <NavLink>
                     <StyledLink to="/">Home</StyledLink>
                 </NavLink>
