@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Styled from "styled-components";
 import { Link } from 'react-router-dom';
 
@@ -21,6 +21,7 @@ margin: 0;
 
 const TitleContainer = Styled.div`
 display: flex;
+flex-flow: column;
 justify-content: center;
 align-items: center;
 `
@@ -45,8 +46,31 @@ border: none;
 margin-top: 5%;
 `
 
+const Counter = Styled.div`
+font-size: 3rem;
+`
+
+const CountContainer = Styled.div`
+display: flex;
+`
+
 
 const Home = () => {
+
+    useEffect(() => {
+        let current = 0;
+        let increment = 1;
+        const num = document.querySelector('.counter');
+        const timer = setInterval(function () {
+            current += increment;
+            num.textContent = current;
+            if (current === 25) {
+                clearInterval(timer);
+            }
+        }, 125)
+    })
+
+
     return (
         <>
             <StyledHeader>
@@ -58,6 +82,10 @@ const Home = () => {
             <div>
                 <TitleContainer>
                     <h2>Why Us</h2>
+                    <CountContainer>
+                        <Counter className="counter"></Counter>
+                        <p>Years of experience</p>
+                    </CountContainer>
                 </TitleContainer>
             </div>
             <div>
